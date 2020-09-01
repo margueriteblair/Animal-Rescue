@@ -13,8 +13,12 @@ let app = express(); //your application is an instance of express
 app.use(express.static('public')); //allows static html files to be process
 app.use(express.json()) //allows json files to be processed
 
-// app.use('/', homeRouter)
-// app.use('/user', userRouter)
+//imported
+const homeRouter = require('./routes/homeRouter');
+const userRouter = require('./routes/userRouter')
+
+app.use('/', homeRouter)
+app.use('/user', userRouter)
 
 
 
