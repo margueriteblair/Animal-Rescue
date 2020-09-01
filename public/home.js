@@ -31,13 +31,24 @@ window.onload = () => {
     form.appendChild(desiredPet)
     form.appendChild(comments)
     form.id = "form"
+    document.body.appendChild(submitBtn);
     
     submitBtn.addEventListener("mouseup", () => {
+        console.log("click");
         const formElems = document.getElementById('form');
         const requestBody = {};
         for (const input of formElems) {
             requestBody[input.name] = input.value
         }
+        const endpoint = location.origin() + '/user/adoption';
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', endpoint);
+        xhr.onload = () => {
+            const res = JSON.parse(xhr.responseText);
+            console.log(res);
+        }
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(requestBody));
     })
     
 
