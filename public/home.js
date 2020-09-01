@@ -38,7 +38,7 @@ window.onload = () => {
         for (const input of formElems) {
             requestBody[input.name] = input.value
         }
-        const endpoint = location.origin() + '/user/adoption';
+        const endpoint = location.origin + '/user/adoption';
         const xhr = new XMLHttpRequest();
         xhr.open('POST', endpoint);
         xhr.onload = () => {
