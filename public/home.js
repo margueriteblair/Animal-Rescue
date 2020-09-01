@@ -2,8 +2,6 @@ window.onload = () => {
     let header = document.createElement('h1')
     header.innerText = "Online adoption form"
     document.body.appendChild(header)
-    
-    
     let firstName = document.createElement('input')
     let lastName = document.createElement('input')
     let emailAddr = document.createElement('input')
