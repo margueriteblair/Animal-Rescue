@@ -27,7 +27,7 @@ const AnimalSchema = new mongoose.Schema({
         required: true,
         minlength: 2
     },
-    comment: {
+    comments: {
         type: String,
         required: false
 
